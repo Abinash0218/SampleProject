@@ -11,3 +11,19 @@ else:  # executes when the try block has no error
     print("Successfully executed")
 finally:  # executes at the end of the program if the code has error or not
     print("Execution completed")
+
+
+try:
+    file=open("data.txt","r")
+    content=file.read()
+    print(content)
+except Exception as e:
+    print("Error occured,",e)
+else:
+     print("Successfully executed")
+finally:
+    print("Closing file after reading")
+    try:
+        file.close()
+    except:
+        pass # its used to skip the block
